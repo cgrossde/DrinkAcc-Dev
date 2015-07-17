@@ -356,7 +356,7 @@ ln -s /etc/nginx/sites-available/drinkaccounting-prod /etc/nginx/sites-enabled/d
 
 # Install framework
 cd /var/www/html
-composer install --prefer-dist
+composer install
 
 ./flow core:setfilepermissions vagrant vagrant vagrant
 ./flow doctrine:migrate

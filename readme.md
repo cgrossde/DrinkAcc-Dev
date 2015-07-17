@@ -16,6 +16,20 @@ Open a shell and execute `vagrant up`. Vagrant will now get a VM and install all
 
 Vagrant synchronises the `html` folder into the VM at `/var/www/html`, so just use your favorite Text-Editor and edit the files on the host machine in the `html` folder.
 
+### Install problems
+
+Should the initial run of `composer install` throw errors, then try to fix them or just run `composer install again`. Once composer installed all dependencies you can setup Typo3 flow with theses commands:
+
+```
+# Repeat until all dependencies are present and no more errors occur
+composer install
+
+# Setup typo3 flow
+./flow core:setfilepermissions vagrant vagrant vagrant
+./flow doctrine:migrate
+./flow doctrine:update
+```
+
 ## Services
 
 * Website dev context (less caching): http://drinkacc.dev
