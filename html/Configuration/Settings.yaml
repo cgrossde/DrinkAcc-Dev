@@ -1,0 +1,16 @@
+TYPO3:
+  Flow:
+    persistence:
+
+      # It is good practice to not specify user name and password of the database
+      # connection in this global Settings.yaml file. Rather specify them in the
+      # settings of the respective context (Production / Development ...).
+      backendOptions:
+        driver: 'pdo_mysql'
+        dbname: 'drinkaccounting'
+        user: 'drinkaccounting'
+        password: 'secret'
+        host: 'localhost'    # adjust to your database host
+
+#      doctrine:
+#        sqlLogger: TYPO3\FLOW3\Persistence\Doctrine\Logging\SqlLogger

@@ -1,0 +1,11 @@
+/.vagrant
+*.box
+*.log
+.DS_Store
+
+/html/*
+!/html/composer.json
+!/html/composer.lock
+!/html/Configuration/
+!/html/Configuration/Routes.yaml
+!/html/Configuration/Settings.yaml
