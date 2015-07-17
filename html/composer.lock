@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3d3f0c58a6ccecba0c3ce8d40a086cb8",
+    "hash": "c1015419210d69b774f451db4fbfbaf0",
     "packages": [
         {
             "name": "cgross/drinkaccounting",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cgrossde/CGROSS.Drinkaccounting.git",
-                "reference": "73638b45037164b55079cfae5baf8da3dc6ad021"
+                "reference": "3c8d40eb34e1ef5a7dd2191059b7b10ee8588182"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cgrossde/CGROSS.Drinkaccounting/zipball/73638b45037164b55079cfae5baf8da3dc6ad021",
-                "reference": "73638b45037164b55079cfae5baf8da3dc6ad021",
+                "url": "https://api.github.com/repos/cgrossde/CGROSS.Drinkaccounting/zipball/3c8d40eb34e1ef5a7dd2191059b7b10ee8588182",
+                "reference": "3c8d40eb34e1ef5a7dd2191059b7b10ee8588182",
                 "shasum": ""
             },
             "require": {
@@ -41,7 +41,7 @@
                 "source": "https://github.com/cgrossde/CGROSS.Drinkaccounting/tree/master",
                 "issues": "https://github.com/cgrossde/CGROSS.Drinkaccounting/issues"
             },
-            "time": "2015-07-17 13:24:45"
+            "time": "2015-07-17 14:51:01"
         },
         {
             "name": "composer/installers",
@@ -1019,157 +1019,6 @@
     ],
     "packages-dev": [
         {
-            "name": "debug/toolbar",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mneuhaus/Debug.Toolbar.git",
-                "reference": "dcf2f431f4f7752a19d34debbd9806385b8fba30"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mneuhaus/Debug.Toolbar/zipball/dcf2f431f4f7752a19d34debbd9806385b8fba30",
-                "reference": "dcf2f431f4f7752a19d34debbd9806385b8fba30",
-                "shasum": ""
-            },
-            "require": {
-                "jdorn/sql-formatter": "*",
-                "typo3/flow": "*"
-            },
-            "type": "typo3-flow-package",
-            "autoload": {
-                "psr-0": {
-                    "Debug\\Toolbar": "Classes"
-                }
-            },
-            "support": {
-                "source": "https://github.com/mneuhaus/Debug.Toolbar/tree/master",
-                "issues": "https://github.com/mneuhaus/Debug.Toolbar/issues"
-            },
-            "time": "2014-08-18 20:04:37"
-        },
-        {
-            "name": "jdorn/sql-formatter",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jdorn/sql-formatter.git",
-                "reference": "ffecdad6ca3f6235f941e960bc9d290a20054586"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jdorn/sql-formatter/zipball/ffecdad6ca3f6235f941e960bc9d290a20054586",
-                "reference": "ffecdad6ca3f6235f941e960bc9d290a20054586",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*"
-            },
-            "bin": [
-                "bin/sql-formatter"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.3.x-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "lib"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jeremy Dorn",
-                    "email": "jeremy@jeremydorn.com",
-                    "homepage": "http://jeremydorn.com/"
-                }
-            ],
-            "description": "a PHP SQL highlighting library",
-            "homepage": "https://github.com/jdorn/sql-formatter/",
-            "keywords": [
-                "highlight",
-                "sql"
-            ],
-            "time": "2015-03-30 17:07:12"
-        },
-        {
-            "name": "mikey179/vfsStream",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mikey179/vfsStream.git",
-                "reference": "fc0fe8f4d0b527254a2dc45f0c265567c881d07e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mikey179/vfsStream/zipball/fc0fe8f4d0b527254a2dc45f0c265567c881d07e",
-                "reference": "fc0fe8f4d0b527254a2dc45f0c265567c881d07e",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "org\\bovigo\\vfs": "src/main/php"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD"
-            ],
-            "homepage": "http://vfs.bovigo.org/",
-            "time": "2012-08-25 12:49:29"
-        },
-        {
-            "name": "sandstorm/phpprofiler",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sandstorm/PhpProfiler.git",
-                "reference": "25d6d11d1f3d5f53827a6978f9b784c8f49f9441"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sandstorm/PhpProfiler/zipball/25d6d11d1f3d5f53827a6978f9b784c8f49f9441",
-                "reference": "25d6d11d1f3d5f53827a6978f9b784c8f49f9441",
-                "shasum": ""
-            },
-            "type": "typo3-flow-package",
-            "autoload": {
-                "psr-0": {
-                    "Sandstorm\\PhpProfiler": "Classes"
-                }
-            },
-            "license": [
-                "GPL-3.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Kurfürst",
-                    "homepage": "http://sandstorm-media.de",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Base package for collecting timers and xhprof traces. Can be used with sandstorm/plumber for visualization.",
-            "support": {
-                "issues": "https://github.com/sandstorm/PhpProfiler/issues",
-                "irc": "irc://irc.freenode.net/typo3-flow",
-                "source": "https://github.com/sandstorm/PhpProfiler"
-            },
-            "time": "2013-11-15 05:49:57"
-        },
-        {
             "name": "typo3/buildessentials",
             "version": "dev-master",
             "source": {
@@ -1222,8 +1071,7 @@
         "typo3/flow": 20,
         "typo3/welcome": 20,
         "typo3/kickstart": 20,
-        "typo3/buildessentials": 20,
-        "sandstorm/phpprofiler": 20
+        "typo3/buildessentials": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

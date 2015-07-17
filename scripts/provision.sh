@@ -20,7 +20,8 @@ apt-get update
 # Install Some Basic Packages
 
 apt-get install -y build-essential curl dos2unix gcc git libmcrypt4 libpcre3-dev \
-make python2.7-dev python-pip re2c supervisor unattended-upgrades whois vim zsh unzip
+make python2.7-dev python-pip re2c supervisor unattended-upgrades whois vim zsh unzip \
+htop screen
 
 # Set My Timezone
 
@@ -174,10 +175,10 @@ apt-get install -y memcached
 #
 # https://sourceforge.net/projects/phpmyadmin/files/latest/download
 cd /var/www/
-wget -O download.zip http://sourceforge.net/projects/phpmyadmin/files/latest/download
+wget -O download.zip  wget -O download.zip https://files.phpmyadmin.net/phpMyAdmin/4.4.11/phpMyAdmin-4.4.11-all-languages.zip
 unzip download.zip
 mv phpMyAdmin-* phpmyadmin
-rm download
+rm download.zip
 # Config phpMyAdmin
 echo "<?php
 \$cfg['blowfish_secret'] = ''; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
@@ -313,6 +314,9 @@ ln -s /etc/nginx/sites-available/drinkaccounting /etc/nginx/sites-enabled/drinka
 # Install framework
 cd /var/www/html
 composer install
+
+./flow core:setfilepermissions vagrant vagrant vagrant
+./flow doctrine:migrate
 
 # #
 # # Reduce size

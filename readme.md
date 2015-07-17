@@ -1,31 +1,29 @@
-# Fork of Laravel Settler
+# Drinkaccounting distribution package
 
-## Changes
+See: https://github.com/cgrossde/CGROSS.Drinkaccounting
 
-* Fix npm install
-* Node updated to 0.12.2
-* [Mailcatcher](http://mailcatcher.me) to catch and view mails sent by server
-* PhpMyAdmin on port 1085 / 10850
-* ZSH shell with [grml-zsh-config](http://grml.org/zsh/)
-* Increased `xdebug.max_nesting_level` to 200 for *behat* to work
-* Reduced size ~520MB
+## Install
 
-**Aliases:**
-* `behat` for `vendor/behat/behat/bin/behat`
-* `artisan` for `php artisan`
-
-## Use
-
-This box is available as `cgrossde/homesteadfork`. Fetch it using vagrant:
+Add the line
 
 ```
-vagrant box add cgrossde/homesteadfork
+192.168.33.10 drinkaccounting.local
 ```
 
-To use this box you need my fork of [homestead](https://github.com/cgrossde/homestead). Install it using `composer` like this:
+to your `/etc/hosts` or `C:\ Windows\System32\drivers\etc\hosts`.
 
-```
-composer global require "cgross/homesteadfork"
-```
+Open a shell and execute `vagrant up`. Vagrant will now get a VM and install all the necessary software in it.
 
-**After that you will have the `hsfork` command**. The rest of the install is equivalent with the [Laravel documentation](http://laravel.com/docs/4.2/homestead) about homestead. Just replace every `homestead` command with the `hsfork` command. I renamed it to `hsfork` so you can install homestead and my fork in parallel but you won't be able to run both machines at the same time since they use the same ports.
+Vagrant synchronises the `html` folder into the VM at `/var/www/html`, so just use your favorite Text-Editor and edit the files on the host machine in the `html` folder.
+
+## Services
+
+* Website: http://drinkaccounting.local | http://localhost:8000
+* PhpMyAdmin: http://drinkaccounting.local:1085 | http://localhost:10850
+* Mailcatcher: http://drinkaccounting.local:1080 | http://localhost:10800
+
+## Accounts
+
+**MySQL:**
+Admin: root:secret
+Drinkaccounting DB: drinkaccounting (drinkaccounting:secret)
