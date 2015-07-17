@@ -33,7 +33,7 @@ apt-get install -y php5-cli php5-dev php-pear \
 php5-mysqlnd php5-pgsql php5-sqlite \
 php5-apcu php5-json php5-curl php5-gd \
 php5-gmp php5-imap php5-mcrypt php5-xdebug \
-php5-memcached 
+php5-memcached
 
 # Make MCrypt Available
 
@@ -60,7 +60,8 @@ wget -O /home/vagrant/.zshrc http://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 
 # Alias for behat and artisan
 printf "\nalias behat=\"vendor/behat/behat/bin/behat\"\n" | tee -a /home/vagrant/.zshrc.local
-printf "\nalias artisan=\"php artisan\"\n" | tee -a /home/vagrant/.zshrc.local
+printf "\nalias flow=\"./flow\"\n" | tee -a /home/vagrant/.zshrc.local
+printf "\ncd /var/www/html \n" | tee -a /home/vagrant/.zshrc.local
 
 chown vagrant /home/vagrant/.zshrc.local
 
@@ -69,10 +70,11 @@ sudo chsh -s /bin/zsh vagrant
 
 # Set Some PHP CLI Settings
 
-sudo sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php5/cli/php.ini
-sudo sed -i "s/display_errors = .*/display_errors = On/" /etc/php5/cli/php.ini
-sudo sed -i "s/memory_limit = .*/memory_limit = 512M/" /etc/php5/cli/php.ini
-sudo sed -i "s/;date.timezone.*/date.timezone = UTC/" /etc/php5/cli/php.ini
+sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php5/cli/php.ini
+sed -i "s/display_errors = .*/display_errors = On/" /etc/php5/cli/php.ini
+sed -i "s/memory_limit = .*/memory_limit = 512M/" /etc/php5/cli/php.ini
+sed -i "s/;date.timezone.*/date.timezone = UTC/" /etc/php5/cli/php.ini
+sed -i "s/max_execution_time.*/max_execution_time = 120/" /etc/php5/cli/php.ini
 
 # Install Nginx & PHP-FPM
 
@@ -91,6 +93,7 @@ sed -i "s/display_errors = .*/display_errors = On/" /etc/php5/fpm/php.ini
 sed -i "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/" /etc/php5/fpm/php.ini
 sed -i "s/memory_limit = .*/memory_limit = 512M/" /etc/php5/fpm/php.ini
 sed -i "s/;date.timezone.*/date.timezone = UTC/" /etc/php5/fpm/php.ini
+sed -i "s/max_execution_time.*/max_execution_time = 120/" /etc/php5/fpm/php.ini
 
 echo "xdebug.remote_enable = 1" >> /etc/php5/fpm/conf.d/20-xdebug.ini
 echo "xdebug.remote_connect_back = 1" >> /etc/php5/fpm/conf.d/20-xdebug.ini
@@ -126,9 +129,11 @@ EOF
 
 sed -i "s/user www-data;/user vagrant;/" /etc/nginx/nginx.conf
 sed -i "s/# server_names_hash_bucket_size.*/server_names_hash_bucket_size 64;/" /etc/nginx/nginx.conf
+# sed -i "s/sendfile on;/sendfile off;/" /etc/nginx/nginx.conf # Only use for NFS share
 
 sed -i "s/user = www-data/user = vagrant/" /etc/php5/fpm/pool.d/www.conf
 sed -i "s/group = www-data/group = vagrant/" /etc/php5/fpm/pool.d/www.conf
+sed -i "s/;request_terminate_timeout.*/request_terminate_timeout = 120/" /etc/php5/fpm/pool.d/www.conf
 
 sed -i "s/;listen\.owner.*/listen.owner = vagrant/" /etc/php5/fpm/pool.d/www.conf
 sed -i "s/;listen\.group.*/listen.group = vagrant/" /etc/php5/fpm/pool.d/www.conf
@@ -143,9 +148,9 @@ usermod -a -G www-data vagrant
 id vagrant
 groups vagrant
 
-# Install SQLite
+# Install SQLite & memcached
 
-apt-get install -y sqlite3 libsqlite3-dev
+apt-get install -y sqlite3 libsqlite3-dev memcached
 
 # Install MySQL
 
@@ -165,11 +170,6 @@ mysql --user="root" --password="secret" -e "GRANT ALL ON *.* TO 'drinkaccounting
 mysql --user="root" --password="secret" -e "FLUSH PRIVILEGES;"
 mysql --user="root" --password="secret" -e "CREATE DATABASE drinkaccounting;"
 service mysql restart
-
-
-# Install A Few Other Things
-
-apt-get install -y memcached
 
 # Install PhpMyAdmin
 #
@@ -235,33 +235,34 @@ echo "server {
 ln -s /etc/nginx/sites-available/phpmyadmin /etc/nginx/sites-enabled/phpmyadmin
 
 # Install Mailcatcher
+# DEACTIVATED FOR NOW
 
-# Create user & logdir
-adduser --gecos "" --home /var/spool/mailcatcher --shell /bin/true --disabled-password mailcatcher
-mkdir -p /var/log/mailcatcher
-chown mailcatcher:mailcatcher /var/log/mailcatcher
-chmod 755 /var/log/mailcatcher
+# # Create user & logdir
+# adduser --gecos "" --home /var/spool/mailcatcher --shell /bin/true --disabled-password mailcatcher
+# mkdir -p /var/log/mailcatcher
+# chown mailcatcher:mailcatcher /var/log/mailcatcher
+# chmod 755 /var/log/mailcatcher
 
-# Install mailcatcher
-apt-get install -y ruby-dev
-gem install mailcatcher
+# # Install mailcatcher
+# apt-get install -y ruby-dev
+# gem install mailcatcher
 
-# Create upstart job
-echo "# mailcatcher - mock smtp server
-#
-# mailCatcher runs a super simple SMTP server which catches any
-# message sent to it to display in a web interface.
+# # Create upstart job
+# echo "# mailcatcher - mock smtp server
+# #
+# # mailCatcher runs a super simple SMTP server which catches any
+# # message sent to it to display in a web interface.
 
-description \"mock smtp server\"
+# description \"mock smtp server\"
 
-start on runlevel [2345]
-stop on starting rc RUNLEVEL=[016]
+# start on runlevel [2345]
+# stop on starting rc RUNLEVEL=[016]
 
-setuid mailcatcher
-setgid mailcatcher
+# setuid mailcatcher
+# setgid mailcatcher
 
-exec nohup /usr/local/bin/mailcatcher -f --ip 0.0.0.0  >> /var/log/mailcatcher/mailcatcher.log 2>&1
-" > /etc/init/mailcatcher.conf
+# exec nohup /usr/local/bin/mailcatcher -f --ip 0.0.0.0  >> /var/log/mailcatcher/mailcatcher.log 2>&1
+# " > /etc/init/mailcatcher.conf
 
 # Add swap for composer
 /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
@@ -273,7 +274,7 @@ echo "/var/swap.1 	swap 	swap 	defaults 	0 0" >> /etc/fstab
 # Create ngix site for drinkaccounting
 echo "server {
     listen 80;
-    server_name drinkaccounting.local;
+    server_name drinkacc.dev;
     root \"/var/www/html/Web\";
 
     index index.html index.htm index.php;
@@ -288,7 +289,7 @@ echo "server {
     location = /robots.txt  { access_log off; log_not_found off; }
 
     access_log off;
-    error_log  /var/log/nginx/drinkaccounting.log error;
+    error_log  /var/log/nginx/drinkacc.dev.log error;
 
     sendfile off;
 
@@ -308,15 +309,58 @@ echo "server {
     location ~ /\.ht {
         deny all;
     }
-}" > /etc/nginx/sites-available/drinkaccounting
-ln -s /etc/nginx/sites-available/drinkaccounting /etc/nginx/sites-enabled/drinkaccounting
+}" > /etc/nginx/sites-available/drinkaccounting-dev
+ln -s /etc/nginx/sites-available/drinkaccounting-dev /etc/nginx/sites-enabled/drinkaccounting-dev
+
+# Create ngix site for drinkaccounting PRODUCTION
+echo "server {
+    listen 80;
+    server_name drinkacc.prod;
+    root \"/var/www/html/Web\";
+
+    index index.html index.htm index.php;
+
+    charset utf-8;
+
+    location / {
+        try_files \$uri \$uri/ /index.php?\$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    access_log off;
+    error_log  /var/log/nginx/drinkacc.prod.log error;
+
+    sendfile off;
+
+    client_max_body_size 100m;
+
+    location ~ \.php\$ {
+        fastcgi_split_path_info ^(.+\.php)(/.+)\$;
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
+        fastcgi_param FLOW_CONTEXT Production;
+        fastcgi_intercept_errors off;
+        fastcgi_buffer_size 16k;
+        fastcgi_buffers 4 16k;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}" > /etc/nginx/sites-available/drinkaccounting-prod
+ln -s /etc/nginx/sites-available/drinkaccounting-prod /etc/nginx/sites-enabled/drinkaccounting-prod
 
 # Install framework
 cd /var/www/html
-composer install
+composer install --prefer-dist
 
 ./flow core:setfilepermissions vagrant vagrant vagrant
 ./flow doctrine:migrate
+./flow doctrine:update
 
 # #
 # # Reduce size
