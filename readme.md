@@ -34,7 +34,7 @@ composer install
 
 * Website dev context (less caching): http://drinkacc.dev
 * Website production context: http://drinkacc.prod
-* PhpMyAdmin: http://drinkaccounting.local:1085 | http://localhost:10850
+* PhpMyAdmin: http://drinkacc.dev:1085 | http://localhost:10850
 
 ## Accounts
 
@@ -45,12 +45,10 @@ Drinkaccounting DB: drinkaccounting (drinkaccounting:secret)
 ## Logs
 
 ```
-# Ngix
-less /var/log/nginx/drinkacc.dev.log
-less /var/log/nginx/drinkacc.prod.log
-# Typo3 Flow
-less /var/www/html/Data/Logs/System_Development.log
-less /var/www/html/Data/Logs/System_Production.log
+# Production: drinkacc.prod
+multitail /var/log/nginx/drinkacc.prod.log /var/www/html/Data/Logs/System.log
+# Development: drinkacc.dev
+multitail /var/log/nginx/drinkacc.dev.log /var/www/html/Data/Logs/System_Development.log
 ```
 
 ## Useful commands
@@ -60,8 +58,13 @@ less /var/www/html/Data/Logs/System_Production.log
 ./flow flow:cache:flush
 # Update database after changes to models
 ./flow doctrine:update
-# Show log
-tail -f Data/Logs/System_Development.log
-# Or if in production context
-tail -f Data/Logs/System_Production.log
+# List all commands
+./flow help
 ```
+
+## Useful sites
+
+* http://flow.typo3.org/documentation/quickstart
+* http://flow.typo3.org/documentation/guide
+* http://flow.typo3.org
+* http://google.de
