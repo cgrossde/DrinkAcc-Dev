@@ -32,5 +32,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	end
 
 	# Sync folder between vm and host
-	config.vm.synced_folder "html/", "/var/www/html"
+	# Use nfs if possible
+	if Vagrant.has_plugin?('vagrant-bindfs')
+		config.vm.synced_folder "html/", "/mnt/vagrant-html", id: "html", type: 'nfs'
+	  	config.bindfs.bind_folder "/mnt/vagrant-html", "/var/www/html", owner: 'vagrant', group: 'vagrant', perms: "u=rwX:g=rwX:o=rD", :"create-with-perms" => "u=rwx:g=rwx:o=rD", :"chown-ignore" => true, :"chgrp-ignore" => true, :"chmod-ignore" => true
+	elsif Vagrant.has_plugin?('vagrant-winnfsd')
+		config.vm.synced_folder "html/", "/var/www/html", id: "html", type: 'nfs'
+	else
+	  config.vm.synced_folder "html/", "/var/www/html"
+	end
 end
