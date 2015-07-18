@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d602a46a1c9dd4f2cc065255f81fd9a5",
+    "hash": "90be380490f3a91e0bb667235b27596c",
     "packages": [
         {
             "name": "cgross/drinkaccounting",
@@ -49,13 +49,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "e420b539e8d7b38b7c6f3f99dccc0386bd3dfe41"
+                "reference": "e420b539e8d7b38b7c6f3f99dccc0386bd3dfe41",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/composer/installers/zipball/e420b539e8d7b38b7c6f3f99dccc0386bd3dfe41",
                 "reference": "e420b539e8d7b38b7c6f3f99dccc0386bd3dfe41",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://abh-ticket.abh.uni-karlsruhe.de:8770/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "replace": {
                 "roundcube/plugin-installer": "*",
@@ -144,13 +156,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "f4a91702ca3cd2e568c3736aa031ed00c3752af4"
+                "reference": "f4a91702ca3cd2e568c3736aa031ed00c3752af4",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/annotations/zipball/f4a91702ca3cd2e568c3736aa031ed00c3752af4",
                 "reference": "f4a91702ca3cd2e568c3736aa031ed00c3752af4",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://abh-ticket.abh.uni-karlsruhe.de:8770/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "doctrine/lexer": "1.*",
@@ -212,13 +236,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "e7b77e5abe230a2cc1db5005fb86435da213ae3b"
+                "reference": "e7b77e5abe230a2cc1db5005fb86435da213ae3b",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/cache/zipball/e7b77e5abe230a2cc1db5005fb86435da213ae3b",
                 "reference": "e7b77e5abe230a2cc1db5005fb86435da213ae3b",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://abh-ticket.abh.uni-karlsruhe.de:8770/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "php": ">=5.3.2"
@@ -282,13 +318,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a"
+                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/collections/zipball/6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
                 "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://abh-ticket.abh.uni-karlsruhe.de:8770/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "php": ">=5.3.2"
@@ -348,13 +396,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "26727ba78de21a824dcbfa5a8ab52c21fe7d71d5"
+                "reference": "26727ba78de21a824dcbfa5a8ab52c21fe7d71d5",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/common/zipball/26727ba78de21a824dcbfa5a8ab52c21fe7d71d5",
                 "reference": "26727ba78de21a824dcbfa5a8ab52c21fe7d71d5",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://abh-ticket.abh.uni-karlsruhe.de:8770/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "doctrine/annotations": "1.*",
@@ -421,13 +481,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "8f0b6b70ce07ccc50c9fce8a131373fc9a8bbd17"
+                "reference": "8f0b6b70ce07ccc50c9fce8a131373fc9a8bbd17",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/dbal/zipball/8f0b6b70ce07ccc50c9fce8a131373fc9a8bbd17",
                 "reference": "8f0b6b70ce07ccc50c9fce8a131373fc9a8bbd17",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://abh-ticket.abh.uni-karlsruhe.de:8770/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "doctrine/common": ">=2.4,<2.6-dev",
@@ -492,13 +564,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "b0b2feffb47906a03b570777c07044c529d1d124"
+                "reference": "b0b2feffb47906a03b570777c07044c529d1d124",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/inflector/zipball/b0b2feffb47906a03b570777c07044c529d1d124",
                 "reference": "b0b2feffb47906a03b570777c07044c529d1d124",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://abh-ticket.abh.uni-karlsruhe.de:8770/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "php": ">=5.3.2"
@@ -559,13 +643,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c"
+                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/lexer/zipball/83893c552fd2045dd78aef794c31e694c37c0b8c",
                 "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://abh-ticket.abh.uni-karlsruhe.de:8770/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "php": ">=5.3.2"
@@ -613,13 +709,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "78954cce4962a4655ff47c0751eb78021fbaf2cc"
+                "reference": "78954cce4962a4655ff47c0751eb78021fbaf2cc",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/migrations/zipball/78954cce4962a4655ff47c0751eb78021fbaf2cc",
                 "reference": "78954cce4962a4655ff47c0751eb78021fbaf2cc",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://abh-ticket.abh.uni-karlsruhe.de:8770/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "doctrine/dbal": "~2.2",
@@ -677,13 +785,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "0cf7e0e628c1409c9235c9b107c9623a2e8a80ef"
+                "reference": "0cf7e0e628c1409c9235c9b107c9623a2e8a80ef",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/0cf7e0e628c1409c9235c9b107c9623a2e8a80ef",
                 "reference": "0cf7e0e628c1409c9235c9b107c9623a2e8a80ef",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://abh-ticket.abh.uni-karlsruhe.de:8770/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "doctrine/collections": "~1.1",
@@ -750,13 +870,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "fd85e7517e79a2bceafcee8f7e8b7bbd0919a90a"
+                "reference": "fd85e7517e79a2bceafcee8f7e8b7bbd0919a90a",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/Console/zipball/fd85e7517e79a2bceafcee8f7e8b7bbd0919a90a",
                 "reference": "fd85e7517e79a2bceafcee8f7e8b7bbd0919a90a",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://abh-ticket.abh.uni-karlsruhe.de:8770/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "php": ">=5.3.9"
@@ -808,13 +940,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DomCrawler.git",
-                "reference": "3860edcf7ff7e173cfe2151f0d425e610e77cc35"
+                "reference": "3860edcf7ff7e173cfe2151f0d425e610e77cc35",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/3860edcf7ff7e173cfe2151f0d425e610e77cc35",
                 "reference": "3860edcf7ff7e173cfe2151f0d425e610e77cc35",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://abh-ticket.abh.uni-karlsruhe.de:8770/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "php": ">=5.3.3"
@@ -861,13 +1005,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "6eb40abc613d80828d55a40811c7a3ca491bc926"
+                "reference": "6eb40abc613d80828d55a40811c7a3ca491bc926",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/Yaml/zipball/6eb40abc613d80828d55a40811c7a3ca491bc926",
                 "reference": "6eb40abc613d80828d55a40811c7a3ca491bc926",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://abh-ticket.abh.uni-karlsruhe.de:8770/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "php": ">=5.3.3"
@@ -907,7 +1063,13 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Eel.git",
-                "reference": "26cd2f7e8c00366a8cb407ef86bf76976dfd400b"
+                "reference": "26cd2f7e8c00366a8cb407ef86bf76976dfd400b",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "typo3/flow": "*"
@@ -931,7 +1093,13 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Flow.git",
-                "reference": "16dc107e1ce28920b1f38f4d05980301b4696a86"
+                "reference": "f61337667d088cd2ce977488bee8ea8c922570f3",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "composer/installers": "~1.0.2",
@@ -966,7 +1134,7 @@
             ],
             "description": "TYPO3 Flow Application Framework",
             "homepage": "http://flow.typo3.org",
-            "time": "2015-07-18 07:30:36"
+            "time": "2015-07-18 11:45:52"
         },
         {
             "name": "typo3/fluid",
@@ -974,7 +1142,13 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Fluid.git",
-                "reference": "c6298167cf64ab9d21f07664f75193ca368fba5d"
+                "reference": "d67f67c41d14dc3dce48ea4dbad99d984fcf0103",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "typo3/flow": "*"
@@ -990,7 +1164,7 @@
                 "LGPL-3.0+"
             ],
             "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 Neos, also backported to TYPO3 CMS",
-            "time": "2015-07-17 21:46:25"
+            "time": "2015-07-18 11:45:52"
         },
         {
             "name": "typo3/welcome",
@@ -998,7 +1172,13 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Welcome.git",
-                "reference": "4b334169eaf9038fe26b25a37ceb8d885584224b"
+                "reference": "4b334169eaf9038fe26b25a37ceb8d885584224b",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "typo3/flow": "*"
@@ -1024,7 +1204,13 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Flow/BuildEssentials.git",
-                "reference": "562b18f81030c15c48bce2e50752a01de9f6e98a"
+                "reference": "562b18f81030c15c48bce2e50752a01de9f6e98a",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "composer/installers": "~1.0.2"
@@ -1046,7 +1232,13 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Kickstart.git",
-                "reference": "2c4dcd294d19fa5bd6a5ba7c33280a2300b165b9"
+                "reference": "2c4dcd294d19fa5bd6a5ba7c33280a2300b165b9",
+                "mirrors": [
+                    {
+                        "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "typo3/flow": "*"
