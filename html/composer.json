@@ -7,14 +7,6 @@
         {"packagist": false},
         {
             "type": "vcs",
-            "url": "https://github.com/cgrossde/TYPO3.FLOW"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/cgrossde/TYPO3.FLUID"
-        },
-        {
-            "type": "vcs",
             "url": "https://github.com/cgrossde/CGROSS.Drinkaccounting"
         }
     ],
@@ -23,8 +15,7 @@
         "bin-dir": "bin"
     },
     "require": {
-        "typo3/flow": "dev-master",
-        "typo3/welcome": "dev-master",
+        "typo3/flow": "2.3.6",
         "cgross/drinkaccounting": "master"
     },
     "require-dev": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "90be380490f3a91e0bb667235b27596c",
+    "hash": "20db74f5dbf9c4379be4d9a1e2eecdee",
     "packages": [
         {
             "name": "cgross/drinkaccounting",
@@ -392,11 +392,11 @@
         },
         {
             "name": "doctrine/common",
-            "version": "2.5.x-dev",
+            "version": "2.4.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "26727ba78de21a824dcbfa5a8ab52c21fe7d71d5",
+                "reference": "ae92d076442e27b6910dd86a1292a8867cf5cfe4",
                 "mirrors": [
                     {
                         "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
@@ -406,8 +406,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/26727ba78de21a824dcbfa5a8ab52c21fe7d71d5",
-                "reference": "26727ba78de21a824dcbfa5a8ab52c21fe7d71d5",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/ae92d076442e27b6910dd86a1292a8867cf5cfe4",
+                "reference": "ae92d076442e27b6910dd86a1292a8867cf5cfe4",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -430,7 +430,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5.x-dev"
+                    "dev-master": "2.4.x-dev"
                 }
             },
             "autoload": {
@@ -444,6 +444,17 @@
             ],
             "authors": [
                 {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com",
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com",
+                    "homepage": "http://www.instaclick.com"
+                },
+                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
@@ -452,16 +463,10 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
                     "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "https://github.com/schmittjoh",
+                    "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
             "description": "Common Library for Doctrine projects",
@@ -473,15 +478,15 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2015-04-15 22:02:48"
+            "time": "2014-05-21 19:29:23"
         },
         {
             "name": "doctrine/dbal",
-            "version": "dev-master",
+            "version": "2.3.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "8f0b6b70ce07ccc50c9fce8a131373fc9a8bbd17",
+                "reference": "6b0002cd1349904c5b089ae059e26a2406d1309e",
                 "mirrors": [
                     {
                         "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
@@ -491,8 +496,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/8f0b6b70ce07ccc50c9fce8a131373fc9a8bbd17",
-                "reference": "8f0b6b70ce07ccc50c9fce8a131373fc9a8bbd17",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/6b0002cd1349904c5b089ae059e26a2406d1309e",
+                "reference": "6b0002cd1349904c5b089ae059e26a2406d1309e",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -502,28 +507,18 @@
                 ]
             },
             "require": {
-                "doctrine/common": ">=2.4,<2.6-dev",
+                "doctrine/common": ">=2.3.0,<2.5-dev",
                 "php": ">=5.3.2"
             },
-            "require-dev": {
-                "phpunit/phpunit": "4.*",
-                "symfony/console": "2.*"
-            },
-            "suggest": {
-                "symfony/console": "For helpful console commands such as SQL execution and import of files."
-            },
-            "bin": [
-                "bin/doctrine-dbal"
-            ],
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6.x-dev"
+                    "dev-master": "2.3.x-dev"
                 }
             },
             "autoload": {
                 "psr-0": {
-                    "Doctrine\\DBAL\\": "lib/"
+                    "Doctrine\\DBAL": "lib/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -556,7 +551,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2015-07-16 23:04:42"
+            "time": "2014-09-15 11:48:05"
         },
         {
             "name": "doctrine/inflector",
@@ -705,11 +700,11 @@
         },
         {
             "name": "doctrine/migrations",
-            "version": "dev-master",
+            "version": "v1.0.0-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "78954cce4962a4655ff47c0751eb78021fbaf2cc",
+                "reference": "d2d18ef671b47a7d48fae54806adac87e82fe8e9",
                 "mirrors": [
                     {
                         "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
@@ -719,8 +714,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/78954cce4962a4655ff47c0751eb78021fbaf2cc",
-                "reference": "78954cce4962a4655ff47c0751eb78021fbaf2cc",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/d2d18ef671b47a7d48fae54806adac87e82fe8e9",
+                "reference": "d2d18ef671b47a7d48fae54806adac87e82fe8e9",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -730,18 +725,12 @@
                 ]
             },
             "require": {
-                "doctrine/dbal": "~2.2",
-                "php": ">=5.4.0",
-                "symfony/console": "~2.3",
-                "symfony/yaml": "~2.3"
+                "doctrine/dbal": "~2.0",
+                "php": ">=5.3.2"
             },
             "require-dev": {
-                "doctrine/coding-standard": "dev-master",
-                "doctrine/orm": "2.*",
-                "johnkary/phpunit-speedtrap": "~1.0@dev",
-                "mockery/mockery": "^0.9.4",
-                "phpunit/phpunit": "~4.7",
-                "satooshi/php-coveralls": "0.6.*"
+                "symfony/console": "2.*",
+                "symfony/yaml": "2.*"
             },
             "suggest": {
                 "symfony/console": "to run the migration from the console"
@@ -777,15 +766,15 @@
                 "database",
                 "migrations"
             ],
-            "time": "2015-07-05 21:24:36"
+            "time": "2015-03-22 13:09:02"
         },
         {
             "name": "doctrine/orm",
-            "version": "2.4.x-dev",
+            "version": "2.3.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "0cf7e0e628c1409c9235c9b107c9623a2e8a80ef",
+                "reference": "c2135b38216c6c8a410e764792aa368e946f2ae5",
                 "mirrors": [
                     {
                         "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
@@ -795,8 +784,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/0cf7e0e628c1409c9235c9b107c9623a2e8a80ef",
-                "reference": "0cf7e0e628c1409c9235c9b107c9623a2e8a80ef",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/c2135b38216c6c8a410e764792aa368e946f2ae5",
+                "reference": "c2135b38216c6c8a410e764792aa368e946f2ae5",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -806,15 +795,10 @@
                 ]
             },
             "require": {
-                "doctrine/collections": "~1.1",
-                "doctrine/dbal": "~2.4",
+                "doctrine/dbal": "2.3.*",
                 "ext-pdo": "*",
                 "php": ">=5.3.2",
-                "symfony/console": "~2.0"
-            },
-            "require-dev": {
-                "satooshi/php-coveralls": "dev-master",
-                "symfony/yaml": "~2.1"
+                "symfony/console": "2.*"
             },
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
@@ -826,12 +810,12 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4.x-dev"
+                    "dev-master": "2.3.x-dev"
                 }
             },
             "autoload": {
                 "psr-0": {
-                    "Doctrine\\ORM\\": "lib/"
+                    "Doctrine\\ORM": "lib/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -840,20 +824,23 @@
             ],
             "authors": [
                 {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com",
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com",
+                    "homepage": "http://www.instaclick.com"
+                },
+                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
                 {
                     "name": "Benjamin Eberlei",
                     "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
                 }
             ],
             "description": "Object-Relational-Mapper for PHP",
@@ -862,7 +849,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2015-03-31 07:45:37"
+            "time": "2014-06-03 19:53:45"
         },
         {
             "name": "symfony/console",
@@ -1059,11 +1046,11 @@
         },
         {
             "name": "typo3/eel",
-            "version": "dev-master",
+            "version": "2.3.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Eel.git",
-                "reference": "26cd2f7e8c00366a8cb407ef86bf76976dfd400b",
+                "reference": "c32567e9334295310b8b2b39880c4466074b1d9c",
                 "mirrors": [
                     {
                         "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
@@ -1072,7 +1059,7 @@
                 ]
             },
             "require": {
-                "typo3/flow": "*"
+                "typo3/flow": "2.3.*"
             },
             "type": "typo3-flow-framework",
             "autoload": {
@@ -1085,15 +1072,15 @@
                 "LGPL-3.0+"
             ],
             "description": "The Embedded Expression Language (Eel) is a building block for creating Domain Specific Languages",
-            "time": "2015-07-16 08:59:07"
+            "time": "2015-07-09 13:52:10"
         },
         {
             "name": "typo3/flow",
-            "version": "dev-master",
+            "version": "2.3.6",
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Flow.git",
-                "reference": "f61337667d088cd2ce977488bee8ea8c922570f3",
+                "reference": "83547c3fa8a8fa95aa40b00afc5117d2d38a9f00",
                 "mirrors": [
                     {
                         "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
@@ -1103,24 +1090,23 @@
             },
             "require": {
                 "composer/installers": "~1.0.2",
-                "doctrine/migrations": "1.0.*",
-                "doctrine/orm": "2.4.*",
+                "doctrine/migrations": "1.0.0-alpha3",
+                "doctrine/orm": "2.3.*",
                 "ext-json": ">=1.2.0",
-                "ext-mbstring": "*",
-                "ext-reflection": "*",
+                "ext-session": "*",
                 "ext-spl": "*",
                 "ext-zlib": "*",
-                "php": ">=5.5.0",
+                "php": ">=5.3.2",
                 "symfony/console": "2.*",
                 "symfony/dom-crawler": "2.5.*",
                 "symfony/yaml": "2.5.*",
-                "typo3/eel": "*",
-                "typo3/fluid": "*"
+                "typo3/eel": "2.3.*",
+                "typo3/fluid": "2.3.*",
+                "typo3/party": "2.3.*"
             },
             "suggest": {
                 "doctrine/data-fixtures": "To manage and execute the loading of data fixtures for the Doctrine ORM or ODM",
-                "ext-curl": "To use the \\TYPO3\\Flow\\Http\\Client\\CurlEngine",
-                "typo3/party": "To make use of basic user handling"
+                "ext-curl": "To use the \\TYPO3\\Flow\\Http\\Client\\CurlEngine"
             },
             "type": "typo3-flow-framework",
             "autoload": {
@@ -1134,15 +1120,15 @@
             ],
             "description": "TYPO3 Flow Application Framework",
             "homepage": "http://flow.typo3.org",
-            "time": "2015-07-18 11:45:52"
+            "time": "2015-07-02 14:06:39"
         },
         {
             "name": "typo3/fluid",
-            "version": "dev-master",
+            "version": "2.3.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Fluid.git",
-                "reference": "d67f67c41d14dc3dce48ea4dbad99d984fcf0103",
+                "reference": "55efb11eec400be36ef01f5f6113ff139653f928",
                 "mirrors": [
                     {
                         "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
@@ -1151,7 +1137,7 @@
                 ]
             },
             "require": {
-                "typo3/flow": "*"
+                "typo3/flow": "2.3.*"
             },
             "type": "typo3-flow-framework",
             "autoload": {
@@ -1164,15 +1150,15 @@
                 "LGPL-3.0+"
             ],
             "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 Neos, also backported to TYPO3 CMS",
-            "time": "2015-07-18 11:45:52"
+            "time": "2015-06-29 07:19:56"
         },
         {
-            "name": "typo3/welcome",
-            "version": "dev-master",
+            "name": "typo3/party",
+            "version": "2.3.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://git.typo3.org/Packages/TYPO3.Welcome.git",
-                "reference": "4b334169eaf9038fe26b25a37ceb8d885584224b",
+                "url": "git://git.typo3.org/Packages/TYPO3.Party.git",
+                "reference": "fbcb7a86007e2b5c3bcaf83887c4524e0ad87980",
                 "mirrors": [
                     {
                         "url": "toran@abh-ticket.abh.uni-karlsruhe.de:/var/opt/gitlab/toran-data/mirrors/%package%/%normalizedUrl%.%type%",
@@ -1181,20 +1167,20 @@
                 ]
             },
             "require": {
-                "typo3/flow": "*"
+                "typo3/flow": "2.3.*"
             },
             "type": "typo3-flow-framework",
             "autoload": {
                 "psr-0": {
-                    "TYPO3\\Welcome": "Classes"
+                    "TYPO3\\Party": "Classes"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "LGPL-3.0+"
             ],
-            "description": "This package provides a start screen for the TYPO3 Flow distribution with links to online resources.",
-            "time": "2015-02-25 10:35:57"
+            "description": "A PHP implementation of the OASIS Customer Information Quality (CIQ) XML Standard.",
+            "time": "2014-12-10 23:22:30"
         }
     ],
     "packages-dev": [
@@ -1260,8 +1246,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "typo3/flow": 20,
-        "typo3/welcome": 20,
         "typo3/kickstart": 20,
         "typo3/buildessentials": 20
     },
