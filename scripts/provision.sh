@@ -21,7 +21,7 @@ apt-get update
 
 apt-get install -y build-essential curl dos2unix gcc git libmcrypt4 libpcre3-dev \
 make python2.7-dev python-pip re2c supervisor unattended-upgrades whois vim zsh unzip \
-htop screen
+htop screen multitail
 
 # Set My Timezone
 
@@ -93,7 +93,7 @@ sed -i "s/display_errors = .*/display_errors = On/" /etc/php5/fpm/php.ini
 sed -i "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/" /etc/php5/fpm/php.ini
 sed -i "s/memory_limit = .*/memory_limit = 512M/" /etc/php5/fpm/php.ini
 sed -i "s/;date.timezone.*/date.timezone = UTC/" /etc/php5/fpm/php.ini
-sed -i "s/max_execution_time.*/max_execution_time = 120/" /etc/php5/fpm/php.ini
+sed -i "s/max_execution_time.*/max_execution_time = 300/" /etc/php5/fpm/php.ini
 
 echo "xdebug.remote_enable = 1" >> /etc/php5/fpm/conf.d/20-xdebug.ini
 echo "xdebug.remote_connect_back = 1" >> /etc/php5/fpm/conf.d/20-xdebug.ini
@@ -133,7 +133,7 @@ sed -i "s/# server_names_hash_bucket_size.*/server_names_hash_bucket_size 64;/" 
 
 sed -i "s/user = www-data/user = vagrant/" /etc/php5/fpm/pool.d/www.conf
 sed -i "s/group = www-data/group = vagrant/" /etc/php5/fpm/pool.d/www.conf
-sed -i "s/;request_terminate_timeout.*/request_terminate_timeout = 120/" /etc/php5/fpm/pool.d/www.conf
+sed -i "s/;request_terminate_timeout.*/request_terminate_timeout = 300/" /etc/php5/fpm/pool.d/www.conf
 
 sed -i "s/;listen\.owner.*/listen.owner = vagrant/" /etc/php5/fpm/pool.d/www.conf
 sed -i "s/;listen\.group.*/listen.group = vagrant/" /etc/php5/fpm/pool.d/www.conf
@@ -147,6 +147,9 @@ service php5-fpm restart
 usermod -a -G www-data vagrant
 id vagrant
 groups vagrant
+
+# Allow vagrant user to read log files
+chown -R www-data:www-data /var/log/nginx && chmod g+s /var/log/nginx
 
 # Install SQLite & memcached
 
@@ -296,10 +299,13 @@ echo "server {
     client_max_body_size 100m;
 
     location ~ \.php\$ {
+        proxy_read_timeout 300;
         fastcgi_split_path_info ^(.+\.php)(/.+)\$;
         fastcgi_pass unix:/var/run/php5-fpm.sock;
         fastcgi_index index.php;
         include fastcgi_params;
+        fastcgi_param FLOW_CONTEXT Development;
+        fastcgi_param FLOW_REWRITEURLS 0;
         fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
         fastcgi_intercept_errors off;
         fastcgi_buffer_size 16k;
@@ -337,12 +343,14 @@ echo "server {
     client_max_body_size 100m;
 
     location ~ \.php\$ {
+        proxy_read_timeout 300;
         fastcgi_split_path_info ^(.+\.php)(/.+)\$;
         fastcgi_pass unix:/var/run/php5-fpm.sock;
         fastcgi_index index.php;
         include fastcgi_params;
-        fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
         fastcgi_param FLOW_CONTEXT Production;
+        fastcgi_param FLOW_REWRITEURLS 1;
+        fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
         fastcgi_intercept_errors off;
         fastcgi_buffer_size 16k;
         fastcgi_buffers 4 16k;
@@ -353,6 +361,9 @@ echo "server {
     }
 }" > /etc/nginx/sites-available/drinkaccounting-prod
 ln -s /etc/nginx/sites-available/drinkaccounting-prod /etc/nginx/sites-enabled/drinkaccounting-prod
+
+# Restart nginx
+service nginx restart
 
 # Install framework
 cd /var/www/html

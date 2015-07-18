@@ -3,6 +3,8 @@
     "description" : "TYPO3 Flow Base Distribution",
     "license": "LGPL-3.0+",
     "repositories": [
+	{"type": "composer", "url": "http://172.20.181.43:8770/repo/packagist/"},
+        {"packagist": false},
         {
             "type": "vcs",
             "url": "https://github.com/cgrossde/TYPO3.FLOW"
