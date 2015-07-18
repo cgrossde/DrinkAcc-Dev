@@ -12,5 +12,11 @@ TYPO3:
         password: 'secret'
         host: 'localhost'    # adjust to your database host
 
+    # WINDOWS ONLY
+    # resource:
+    #     publishing:
+    #       fileSystem:
+    #         mirrorMode: copy 
+
 #      doctrine:
 #        sqlLogger: TYPO3\FLOW3\Persistence\Doctrine\Logging\SqlLogger
