@@ -21,7 +21,7 @@ apt-get update
 
 apt-get install -y build-essential curl dos2unix gcc git libmcrypt4 libpcre3-dev \
 make python2.7-dev python-pip re2c supervisor unattended-upgrades whois vim zsh unzip \
-htop screen multitail
+htop screen multitail bindfs
 
 # Set My Timezone
 
@@ -307,6 +307,7 @@ echo "server {
         fastcgi_param FLOW_CONTEXT Development;
         fastcgi_param FLOW_REWRITEURLS 0;
         fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
+        fastcgi_read_timeout 300;
         fastcgi_intercept_errors off;
         fastcgi_buffer_size 16k;
         fastcgi_buffers 4 16k;
@@ -351,6 +352,7 @@ echo "server {
         fastcgi_param FLOW_CONTEXT Production;
         fastcgi_param FLOW_REWRITEURLS 1;
         fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
+        fastcgi_read_timeout 300;
         fastcgi_intercept_errors off;
         fastcgi_buffer_size 16k;
         fastcgi_buffers 4 16k;
