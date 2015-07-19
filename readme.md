@@ -16,9 +16,14 @@ Open a shell and execute `vagrant up`. Vagrant will now get a VM and install all
 
 Vagrant synchronises the `html` folder into the VM at `/var/www/html`, so just use your favorite Text-Editor and edit the files on the host machine in the `html` folder.
 
+## Better performance / Symlink problems
+
+For better performance and to fix symlink problems exec on Windows: `vagrant plugin install vagrant-winnfsd`
+On Mac OS or linux exec: `vagrant plugin install vagrant-bindfs`
+
 ### Install problems
 
-Should the initial run of `composer install` throw errors, then try to fix them or just run `composer install again`. Once composer installed all dependencies you can setup Typo3 flow with theses commands:
+Should the initial run of `composer install` throw errors, then try to fix them or just run `composer install` again. Once composer installed all dependencies you can setup Typo3 flow with theses commands:
 
 ```
 # Repeat until all dependencies are present and no more errors occur
